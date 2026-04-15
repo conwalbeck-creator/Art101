@@ -1,0 +1,26 @@
+p {color :rgb(93, 158, 63); font-size : large; font-weight: strong;}
+
+ol {color :brown; font-size : small;}
+
+html {background-image: url("dinobed.webp"); width: fit-content; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+
+li {text-align: left;}
+
+.highlight_01 {background: cornflowerblue;}
+
+.highlight_02 {background: rgb(146, 196, 99);}
+
+.color_01 {color: rgb(86, 46, 247);}
+
+.color_02 {color:crimson}
+
+.color_03 {color:rgb(236, 89, 167)}
+
+.color_04 {color: coral;}
+
+p strong {font-weight: normal;}
+p 
+
+#penis_small { width: 100px; height: 400;}
+#penis_average {width: 200px;}
+#penis_huge {width: 400px; height: 100;}
