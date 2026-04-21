@@ -17,15 +17,36 @@ body {
 .move-me {                     /* <---this is the class*/
   position: absolute;  /*command to control placement. absolute if for fine tuned location*/
   top: 0px;
+  left: 100px;        /*these are the controls for where the image goes*/
+  color: rgb(224, 52, 240);
+  
+}
+
+.move-me2 {                     /* <---this is the class*/
+  position: absolute;  /*command to control placement. absolute if for fine tuned location*/
+  top: 0px;
+  left: 250px;        /*these are the controls for where the image goes*/
+  color: rgb(224, 52, 240);
+}
+
+.move-me3 {                     /* <---this is the class*/
+  position: absolute;  /*command to control placement. absolute if for fine tuned location*/
+  top: 0px;
   left: 50px;        /*these are the controls for where the image goes*/
   color: rgb(224, 52, 240);
+     background: #fff7e8;
+    padding: 20px;
+    border-radius: 12px;
 }
 
 .angel-text {                     /* <---this is the class*/
   position: absolute;  /*command to control placement. absolute if for fine tuned location*/
   top: 400px;
-  left: 230px;        /*these are the controls for where the image goes*/
+  left: 270px;        /*these are the controls for where the image goes*/
   color: rgb(224, 52, 240);
+   background: #fff7e8;
+    padding: 20px;
+    border-radius: 12px;
 }
 .container {
   position: relative;
@@ -46,4 +67,23 @@ body {
   width: 100%;
   text-align: center;
   color: aliceblue;
+}
+
+.top-section {
+    background: #fff7e8;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.navigation h2 {
+    margin-top: 0;
+}
+
+.navigation li {
+    margin-bottom: 8px;
+}
+
+.navigation a {
+    color: #149c75;
+    font-weight: bold;
 }
