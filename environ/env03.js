@@ -3,6 +3,7 @@ let environmentTitle = "Angel's Weird World";
 let count = 0;
 let count2 = 0;
 let countA = 0;
+let countB = 0;
 
 let mainLocation = {
     name: "Porter Dining Hall",
@@ -29,7 +30,7 @@ $("#question1").click(function () {
     let arrayPosition = count % mainEntity.moods.length;
 
     let currentMood = mainEntity.moods[arrayPosition];
-    
+
     let message = "<p>I am feeling " + currentMood + ".</p>";
 
     $("#output").html(message);
@@ -48,7 +49,7 @@ $("#question2").click(function () {
     let arrayPosition = count2 % mainLocation.environmentElements.length;
 
     let currentElement = mainLocation.environmentElements[arrayPosition];
-    
+
     let message = "<p>This place " + currentElement + ".</p>";
 
     $("#output").html(message);
@@ -63,13 +64,13 @@ let rage = " ";
 
 $("#question3").click(function () {
 
-    
+
     let message = "<p>You've asked me " + countA + rage + " questions" + ".</p>";
 
-    if (countA < 5) {rage = "";}
-    else if (countA >= 5 && countA < 10) {rage = " annoying";}
-    else if (countA >= 10 && countA < 16) {rage = " frustrating";}
-    else {rage = " stupid";}
+    if (countA < 5) { rage = ""; }
+    else if (countA >= 5 && countA < 10) { rage = " annoying"; }
+    else if (countA >= 10 && countA < 16) { rage = " frustrating"; }
+    else { rage = " stupid"; }
 
     $("#output").html(message);
 
@@ -77,4 +78,63 @@ $("#question3").click(function () {
     console.log(arrayPosition);
     console.log(currentMood);
 
+});
+
+function askWeather() {
+    let userWeather = prompt("Play God: cloudy, baking, hell, goo, sunny");
+
+    if (!userWeather) return;
+
+    userWeather = userWeather.trim().toLowerCase();
+
+    const overlay = $("#overlay");
+
+    if (userWeather == "cloudy") {
+        $("#cloudOutput").html("I like that...");
+        overlay.css({
+            "background-color": "gray",
+            "opacity": "0.3"
+        });
+    }
+    else if (userWeather == "baking") {
+        $("#cloudOutput").html("That's meant for cookies...");
+        overlay.css({
+            "background-color": "orange",
+            "opacity": "0.3"
+        });
+    }
+    else if (userWeather == "hell") {
+        $("#cloudOutput").html("Too Hot...");
+        overlay.css({
+            "background-color": "red",
+            "opacity": "0.3"
+        });
+    }
+    else if (userWeather == "goo") {
+        $("#cloudOutput").html("Ew");
+        overlay.css({
+            "background-color": "green",
+            "opacity": "0.3"
+        });
+    }
+    else if (userWeather == "sunny") {
+        $("#cloudOutput").html("blehhh :p");
+        overlay.css({
+            "background-color": "yellow",
+            "opacity": "0.3"
+        });
+    }
+    else {
+        $("#cloudOutput").html("What does that mean?");
+        overlay.css({
+            "background-color": "white",
+            "opacity": "0"
+        });
+
+    }
+}
+
+$("#weatherButton").click(function () {
+    countB = countB + 1;
+    askWeather("Hell");
 });

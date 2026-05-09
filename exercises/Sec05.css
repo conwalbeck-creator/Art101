@@ -1,0 +1,16 @@
+.environment-output {
+    position: relative;
+
+    color: rgb(56, 85, 85);
+    background: #b1eba4;
+    padding: 20px;
+    border-radius: 12px;
+    height: 360px;
+}
+
+.q1title {
+    position: relative;
+    top: 20 px;
+    left: 20 px;
+
+}
