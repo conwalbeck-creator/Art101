@@ -137,3 +137,68 @@ function askWeather() {
 $("#weatherButton").click(function () {
     askWeather();
 });
+
+
+
+let following = false;
+
+function isColliding($div1, $div2) {
+    const d1Offset = $div1.offset();
+    const d1Left = d1Offset.left;
+    const d1Top = d1Offset.top;
+    const d1Right = d1Left + $div1.outerWidth();
+    const d1Bottom = d1Top + $div1.outerHeight();
+
+    const d2Offset = $div2.offset();
+    const d2Left = d2Offset.left;
+    const d2Top = d2Offset.top;
+    const d2Right = d2Left + $div2.outerWidth();
+    const d2Bottom = d2Top + $div2.outerHeight();
+
+    return !(d1Right < d2Left || 
+             d1Left > d2Right || 
+             d1Bottom < d2Top || 
+             d1Top > d2Bottom);
+}
+
+$("#jerry").hover(
+    function () {
+        $("#thought").stop(true, true).slideDown(300);
+    },
+    function () {
+        $("#thought").stop(true, true).slideUp(300);
+    }
+);
+
+$(document).keydown(function (event) {
+    if (event.key === " " || event.code === "Space") {
+        event.preventDefault();
+
+        following = !following;
+        $("#jerry").toggleClass("following");
+    }
+});
+
+$(document).mousemove(function (event) {
+    if (following === true) {
+        const $jerry = $("#jerry");
+        const $scene = $("#scene");
+        const $jail = $("#jail");
+
+        const newLeft = event.pageX - $scene.offset().left + 30;
+        const newTop = event.pageY - $scene.offset().top + 30;
+
+        $jerry.css({
+            left: newLeft,
+            top: newTop
+        });
+
+        if (isColliding($jerry, $jail)) {
+            $("#thought").text("Dude like whats your fucking problem").slideDown(300);
+            $("#status").text("yaaaay thank you <3");
+        } else {
+            $("#thought").text("egh.. go awey...");
+            $("#status").text("getting warmer...");
+        }
+    }
+});
