@@ -11,6 +11,7 @@ html {
     background: #eeeeee;
     padding: 20px;
     margin: 50px;
+    border-radius: 15px;
 }
 
 
@@ -27,6 +28,7 @@ html {
 }
 
 #creature-list>DIV {
+    font-family: "Arial", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,6 +46,7 @@ html {
 }
 
 .eye {
+    font-family: "Arial", sans-serif;
     height: 18px;
     width: 10px;
     border: 2px solid #000;
